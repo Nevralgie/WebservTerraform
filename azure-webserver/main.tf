@@ -105,7 +105,7 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    }
    
    identity {
-      type = SystemAssigned
+      type = "SystemAssigned"
    }
 
    tags = {
