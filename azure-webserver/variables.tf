@@ -35,3 +35,10 @@ variable "environment" {
    description = "Environment"
    default = "dev"
 }
+
+variable "azureadid" {
+   type = string
+   description = "Azure AD user id"
+   default = "8301a7b0-d34b-4854-88c0-c445dff22d3c"
+  
+}
