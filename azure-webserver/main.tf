@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "webserver" {
 }
 
 locals {
-  custom_data = <<CUSTOM_DATA
+  custom_data =
   #!/bin/bash
   #Installing Docker
   sudo apt update && sudo apt upgrade -y
@@ -12,7 +12,7 @@ locals {
   sudo usermod -aG docker $USER
   #Creating container
   sudo docker run -d -p 80:80 -h nginxtfb13 nevii/tfb13nginx-arap22-ren-t:latest
-  CUSTOM_DATA
+  
  }
 resource "azurerm_network_security_group" "allowedports" {
    name = "allowedports"
