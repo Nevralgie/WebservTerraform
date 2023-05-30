@@ -3,16 +3,7 @@ resource "azurerm_resource_group" "webserver" {
    location = var.location
 }
 
-locals {
-  custom_data = <<CUSTOM_DATA
-  #!/bin/bash
-  sudo apt update && sudo apt upgrade -y
-  sudo apt install docker.io -y
-  sudo usermod -aG docker $USER
-  sudo docker run -d -p 80:80 -h nginxtfb13 nevii/tfb13nginx-arap22-ren-t:latest
-CUSTOM_DATA
-  
- }
+
 resource "azurerm_network_security_group" "allowedports" {
    name = "allowedports"
    resource_group_name = azurerm_resource_group.webserver.name
@@ -89,8 +80,7 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    name = "nginx-webserver"
    resource_group_name = azurerm_resource_group.webserver.name
    location = azurerm_resource_group.webserver.location
-   custom_data = base64encode(local.custom_data)
-   #custom_data = base64encode(file("/init-script.sh"))
+   custom_data = base64encode(file("/init-script.sh"))
    network_interface_ids = [
        azurerm_network_interface.webserver.id,
    ]
