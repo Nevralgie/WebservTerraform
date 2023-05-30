@@ -80,7 +80,7 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    name = "nginx-webserver"
    resource_group_name = azurerm_resource_group.webserver.name
    location = azurerm_resource_group.webserver.location
-   custom_data = base64encode(file("init-script.sh"))
+   custom_data = base64encode(file("https://github.com/Nevralgie/WebservTerraform/blob/main/azure-webserver/init-script.sh"))
    network_interface_ids = [
        azurerm_network_interface.webserver.id,
    ]
