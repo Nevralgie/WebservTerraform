@@ -17,6 +17,6 @@ provider "azurerm" {
 }
 
 module "stage" {
-    source = "github.com/Nevralgie/WebservTerraform"
+    source = "github.com/Nevralgie/WebservTerraform/azure-webserver"
     environment = var.environment
 }
