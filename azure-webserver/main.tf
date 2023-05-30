@@ -108,7 +108,7 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    
    identity {
       type = "SystemAssigned"
-      identity_ids = var.azureadid.ids
+      
    }
 
    tags = {
