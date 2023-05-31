@@ -2,7 +2,7 @@
 
 
 sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-sudo az login --service-principal --username a1938c45-c0fb-43a5-87be-ecaa9de8b8b8 --password fe88Q~K0_tI0IWkwQp1nzEO1EosYaxBhWQsojcOV --tenant 7349d3b2-951f-41be-877e-d8ccd9f3e73c
+az login --service-principal --username 1244ff47-5233-442c-b8df-b761e220bc23 --password YtY8Q~Q6kLoKDGGGEn3lGlILr--HZ5EsbJwOGba- --tenant 7349d3b2-951f-41be-877e-d8ccd9f3e73c
 sudo az acr create --resource-group nginx-servertomtest --name tomregistryb13 --sku Basic --admin-enabled true
 sudo az acr build --registry tomregistryb13 --image nginxbrief13 .
 sudo az config set extension.use_dynamic_install=yes_without_prompt
