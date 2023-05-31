@@ -5,12 +5,12 @@ variable "subscription_id" {
 
 variable "client_id" {
    description = "Azure Client ID"
-   default = "a1938c45-c0fb-43a5-87be-ecaa9de8b8b8"
+   default = "1244ff47-5233-442c-b8df-b761e220bc23"
 }
 
 variable "client_secret" {
    description = "Azure Client Secret"
-   default = "fe88Q~K0_tI0IWkwQp1nzEO1EosYaxBhWQsojcOV"
+   default = "YtY8Q~Q6kLoKDGGGEn3lGlILr--HZ5EsbJwOGba-"
 }
 
 variable "tenant_id" {
