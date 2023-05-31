@@ -80,11 +80,11 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    name = "nginx-webserver"
    resource_group_name = azurerm_resource_group.webserver.name
    location = azurerm_resource_group.webserver.location
-   custom_data = filebase64("github.com/Nevralgie/WebservTerraform/azure-webserver//init-script.sh")
+   #custom_data = filebase64("github.com/Nevralgie/WebservTerraform/azure-webserver//init-script.sh")
    #custom_data = filebase64(".terraform/modules/azure-webserver/azure-webserver/init-script.sh")
    #custom_data = filebase64(".terraform/modules/Prod/azure-webserver/init-script.sh")
    #custom_data = filebase64("${path.module}/test.sh")
-   #custom_data = base64encode(file("https://github.com/Nevralgie/WebservTerraform/blob/main/azure-webserver/init-script.sh"))
+   custom_data = base64encode(file("github.com/Nevralgie/WebservTerraform/azure-webserver//init-script.sh"))
    network_interface_ids = [
        azurerm_network_interface.webserver.id,
    ]
