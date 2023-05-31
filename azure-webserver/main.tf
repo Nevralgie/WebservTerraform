@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "webserver" {
-   name = "nginx-servertomtest"
+   name = "nginx-servertomtestb13"
    location = var.location
 }
 
