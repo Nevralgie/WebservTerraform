@@ -15,7 +15,7 @@ sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Log with a service principal previously set up by the command 'az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/yoursubid"
 az login --service-principal --username 1244ff47-5233-442c-b8df-b761e220bc23 --password YtY8Q~Q6kLoKDGGGEn3lGlILr--HZ5EsbJwOGba- --tenant 7349d3b2-951f-41be-877e-d8ccd9f3e73c
 #Get the DockerFile to build our image
-sudo git clonehttps://github.com/Nevralgie/Dockertf.git
+sudo git clone https://github.com/Nevralgie/Dockertf.git
 cd Dockertf
 #Create the registry and build the image
 az acr create --resource-group nginx-servertomtest --name tomregistryb13 --sku Basic --admin-enabled true
