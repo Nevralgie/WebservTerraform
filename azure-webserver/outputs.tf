@@ -13,3 +13,11 @@ output "The_websrever_Private_ip" {
 output "The_webserver_Public_ip" {
    value = azurerm_linux_virtual_machine.nginx.public_ip_address
 }
+
+output "VM_Size" {
+   value = azurerm_linux_virtual_machine.nginx.size
+}
+
+output "environment" {
+  value = azurerm_linux_virtual_machine.nginx.tags.environment
+}
