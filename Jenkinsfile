@@ -20,21 +20,21 @@ pipeline{
         //Initiate the directory as the current workspace
         stage('Terraform init'){
             steps{
-                sh 'cd /ProdEnvironment'
-                sh 'terraform init'
+                
+                sh 'terraform init -target="module.ProdEnvironment"'
             }
         }
         //Plan your deployment
         stage('Terraform plan'){
             steps{
-                sh 'terraform plan'
+                sh 'terraform plan -out main.tfplan'
             }
         }
         //Apply your deployment
         //Note that if the -auto-approve flag is not present, jenkins can not approve the apply and the build will fail.
         stage('Terraform apply'){
             steps{
-                sh 'terraform apply -auto-approve'
+                sh 'terraform apply main.tfplan -auto-approve'
             }
     }
 }
