@@ -21,7 +21,7 @@ pipeline{
         stage('Terraform init'){
             steps{
                 
-                sh 'terraform init -target="ProdEnvironment"'
+                sh 'terraform init -from-module=ProdEnvironment'
             }
         }
         //Plan your deployment
