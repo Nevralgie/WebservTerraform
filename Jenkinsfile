@@ -20,6 +20,7 @@ pipeline{
         //Initiate the directory as the current workspace
         stage('Terraform init'){
             steps{
+                cd /ProdEnvironment
                 sh 'terraform init'
             }
         }
