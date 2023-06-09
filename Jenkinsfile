@@ -34,7 +34,7 @@ pipeline{
         //Note that if the -auto-approve flag is not present, jenkins can not approve the apply and the build will fail.
         stage('Terraform apply'){
             steps{
-                sh 'terraform apply "main.tfplan" -auto-approve'
+                sh 'terraform apply main.tfplan' //-auto-approve
             }
     }
 }
