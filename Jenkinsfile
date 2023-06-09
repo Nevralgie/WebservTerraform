@@ -9,7 +9,7 @@ pipeline{
          //Check the version and download any changes 
         stage('Git Checkout'){
             steps{
-               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Nevralgie/TerraxJenkins']])
+               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Nevralgie/WebservTerraform']])
             }
         }
          //stage('Login'){
